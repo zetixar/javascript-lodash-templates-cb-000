@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Blog Article</title>
+  </head>
+  <body>
+
+
+    <article class="blog-post">
+      <header><h2>I Love Platforms!</header></h2>
+      <div class="blog-body">
+        <p>My dream was to get to a point that I could have the widest, deepest and most lasting effect in the most positive way to other people around the globe when I was a student, But now ...</p>
+      </div>
+
+      <footer>posted by Mohsen Danesh</footer>
+      <!-- <a href="http://www.google.co.uk/" onclick="return (confirm('Follow this link?'))">Google</a> -->
+      <form onsubmit="postComment();return false;">
+        Name: <input type="text" id="commenterName"><br>
+        Comment: <input type="textarea" id="commentText"><br>
+        <input type="submit">
+      </form>
+      <div id="comments"></div>
+    </article>
+
+    <script id="comment-template" type="text/x-lodash-template">
+      <div class="comment">
+        <div class="comment-body"><%= comment %></div>
+        <div class="commenter">
+          <p>
+            <span class="posted-by">Posted By: </span>
+            <% if(commenter !== '') { %>
+            <%= commenter %>
+            <% } else { %>
+            Anonymous
+            <% } %>
+          </p>
+        </div>
+      </div>
+    </script>
+
+    <script src="lodash.min.js"></script>
+    <script src="index2.js"></script>
+
+  </body>
+</html>
